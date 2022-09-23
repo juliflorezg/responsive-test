@@ -42,7 +42,6 @@ function validateName(target) {
   }
 }
 function nameEventFunction(element) {
-  console.log(element)
   const { isValid: isNameValid, error: errorMessage } = validateName(element)
 
   if (!isNameValid) {
@@ -78,7 +77,6 @@ function validateEmail(target) {
 }
 
 function emailEventFunction(element) {
-  console.log(element)
   const { isValid: isEmailValid, error: errorMessage } = validateEmail(element)
 
   if (!isEmailValid) {
@@ -106,7 +104,6 @@ function validateIdentification(target) {
   }
 }
 function identificationEventFunction(element) {
-  console.log(element)
   const { isValid: isIdentificationValid, error: errorMessage } =
     validateIdentification(element)
 
@@ -142,7 +139,6 @@ function validateIdentificationNumber(target) {
   }
 }
 function identificationNumberEventFunction(element) {
-  console.log(element)
   const { isValid: isIdentificationNumberValid, error: errorMessage } =
     validateIdentificationNumber(element)
 
@@ -176,7 +172,6 @@ function validatePhone(target) {
   }
 }
 function phoneEventFunction(element) {
-  console.log(element)
   const { isValid: isPhoneNumberValid, error: errorMessage } =
     validatePhone(element)
 
@@ -221,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 $formIdentificationNumber.addEventListener('keypress', e => {
-  console.log(e)
   if (e.key === '.' || e.key === 'e') {
     e.preventDefault()
   }
@@ -237,11 +231,7 @@ $formIdentificationNumber.addEventListener('input', e =>
 $formPhone.addEventListener('blur', e => phoneEventFunction(e.target))
 $formPhone.addEventListener('input', e => phoneEventFunction(e.target))
 
-console.log($formConditions.value)
-$formConditions.addEventListener('input', e => {
-  console.log(e.target.value)
-  console.log(e.target.checked)
-})
+$formConditions.addEventListener('input', e => {})
 
 $formConditions.addEventListener('blur', e => validateConditions(e.target))
 $formConditions.addEventListener('change', e => validateConditions(e.target))
