@@ -1,0 +1,44 @@
+.contact {
+  padding: 150px 5%;
+
+  &__title,
+  &__text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    max-width: 55ch;
+    margin: 0 auto;
+    margin-bottom: 2.25rem;
+  }
+  &__icons {
+    > div {
+      justify-content: center;
+    }
+  }
+
+  &__react {
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+  &__cv-container {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+  }
+  &__cv-link {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

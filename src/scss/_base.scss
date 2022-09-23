@@ -1,0 +1,55 @@
+:root {
+  // --background-url-medium: url('./assets/fondoBlancoMed.png');
+  // --background-url-medium: url('../assets/fondoBlancoMed.png');
+  // var(--background-url-medium)
+  // --background-url-big: url('../assets/fondoBlancoGrande.png');
+  // --background-url-big: url('./assets/fondoBlancoGrande.png');
+
+  // --main-color: rgb(255, 255, 255);
+  // --secondary-color: hsl(170, 100%, 95%);
+  // --accent-color: rgb(38, 63, 186);
+  // --text-color: black;
+
+  --max-width: 1200px;
+  --background-color: black;
+
+  --text-color: white;
+  // --theme-icon-url: url('../assets/sun-solid.svg');
+  // --theme-icon-url: url('../assets/moon-solid.svg');
+}
+* {
+  box-sizing: border-box;
+  // margin: 0;
+  // padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+
+  @media screen and (min-width: 768px) {
+    scroll-padding-top: var(--scroll-padding, 50px);
+  }
+  // pointer-events: none;
+}
+
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+body,
+header,
+main,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+section {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}

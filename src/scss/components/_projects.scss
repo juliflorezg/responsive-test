@@ -1,0 +1,292 @@
+.projects {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 15rem;
+
+  &__container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 65px;
+    // overflow: hidden;
+
+    @media screen and(min-width:600px) {
+      grid-template-rows: unset;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @media screen and(min-width:1024px) {
+      grid-template-rows: unset;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__section-title {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  &__card {
+    width: 100%;
+    min-height: 450px;
+    background-color: rgba(0, 0, 0, 0);
+
+    position: relative;
+    // display: block;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: transform 0.8s;
+    perspective: 1000px;
+    // overflow: hidden;
+    z-index: 1;
+    font-size: 0.75rem;
+    transform: translate3d(0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    // filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0));
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: drop-shadow(0 0 10px rgba(36, 255, 218, 1));
+    }
+
+    &[data-theme='light'] {
+      &:hover {
+        filter: drop-shadow(0 0 10px rgb(7, 14, 54));
+      }
+    }
+    // &:hover .projects__back {
+    //   background-color: rgb(7, 14, 54);
+    // }
+
+    @media only screen and (min-width: 768px) {
+      // width: auto;
+      // max-width:0 30%;
+      // min-height: 500px;
+      min-height: 500px;
+    }
+
+    & > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      // bottom: 0;
+      right: 0;
+      height: calc(100% - 55px);
+    }
+
+    // .projects__front {
+    //   animation: flip-front1 0.5s ease-in-out forwards;
+    // }
+    &.flip .projects__front {
+      transform: rotateY(-180deg);
+      // animation: flip-front1 0.5s ease-in-out forwards;
+    }
+
+    // .projects__back {
+    //   animation: flip-back1 0.5s ease-in-out forwards;
+    // }
+    &.flip .projects__back {
+      transform: rotateY(0deg);
+      // animation: flip-back1 0.5s ease-in-out forwards;
+    }
+
+    // @keyframes flip-front1 {
+    //   0% {
+    //     transform: rotateY(0deg);
+    //   }
+    //   100% {
+    //     transform: rotateY(-180deg);
+    //   }
+    // }
+    // @keyframes flip-back1 {
+    //   0% {
+    //     transform: rotateY(180deg);
+    //   }
+    //   100% {
+    //     transform: rotateY(0deg);
+    //   }
+    // }
+
+    &:nth-child(2) {
+      .projects__hero {
+        background-image: url('../assets/advice_desktop.png');
+      }
+    }
+    &:nth-child(3) {
+      .projects__hero {
+        background-image: url('../assets/cart_desktop.png');
+      }
+    }
+  }
+
+  &__front {
+    background-color: rgb(7, 14, 54);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotateY(30deg); */
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    font-size: 2em;
+    border-radius: 10px;
+
+    background-image: url('../assets/emoji-thinking1.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // transition: transform 0.5s;
+    // animation-duration: 0.5s;
+  }
+  &__back {
+    background-color: var(--main-color);
+    background-color: rgb(7, 14, 54);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    font-size: 1rem;
+    /* transform: rotateY(180deg) translateZ(-10px); */
+
+    transform: rotateY(180deg);
+
+    /* transform: rotateY(30deg); */
+    z-index: -2;
+    transition: transform 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+
+    // animation-duration: 0.5s;
+
+    &[data-theme='light'] {
+      background-color: hsl(170, 100%, 85%);
+    }
+  }
+
+  &__hero {
+    width: 100%;
+    min-height: 35%;
+    // padding: 0 1px;
+    // padding-left: 4px;
+    padding: 4px;
+
+    background-color: rgba(1, 5, 32, 0.8);
+    background-image: url('../assets/weather_desktop.png');
+    background-size: 85% auto;
+    background-position: 98% 0;
+    background-repeat: no-repeat;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: flex-end;
+    // @media screen and (min-width: 768px) {
+    //   min-height: 40%;
+    // }
+
+    img {
+      display: block;
+      // width: 27%;
+      height: 100%;
+      border-radius: 5px;
+      outline: 5px solid rgb(38, 63, 186);
+      // @media screen and (min-width: 768px) {
+      //   width: 27%;
+      //   height: auto;
+      // }
+      // outline: 5px solid rgb(38, 63, 186);
+      // outline: 5px solid white;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 5%;
+    min-height: 65%;
+    @media screen and (min-width: 768px) {
+      padding: 20px 10%;
+      // min-height: 55%;
+    }
+  }
+  &__title {
+    font-size: 1em;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.3em;
+    }
+  }
+  &__description {
+    font-size: 0.9em;
+    line-height: 1.22;
+    margin-bottom: 1rem;
+  }
+
+  &__technologies {
+    h4 {
+      margin-bottom: 10px;
+      font-size: 0.8em;
+      @media only screen and (min-width: 768px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &__tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__tech-icon {
+    font-size: 0.8em;
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 4px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  //buttons
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    justify-self: flex-end;
+
+    a {
+      padding: 0.5em 0.8em;
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: bold;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__rotate-icon {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background-color: var(--accent-color);
+    fill: var(--secondary-color);
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}

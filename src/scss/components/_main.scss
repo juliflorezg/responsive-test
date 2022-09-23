@@ -1,0 +1,42 @@
+// .main {
+//   --background-url-medium: url('../assets/fondoBlancoMed.png');
+//   --background-url-big: url('../assets/fondoBlancoGrande.png');
+//   padding: 0 5%;
+//   background-image: linear-gradient(
+//     110deg,
+//     hsl(231, 77%, 12%),
+//     hsl(230, 66%, 44%)
+//   );
+//   position: relative;
+
+//   z-index: 0;
+
+//   &[data-theme='light'] {
+//     --background-url-medium: url('../assets/fondoNegroMed.png');
+//     --background-url-big: url('../assets/fondoNegroGrande.png');
+//     background-image: linear-gradient(110deg, white, hsl(170, 100%, 95%));
+
+//     &:after {
+//       opacity: 0.1;
+//     }
+//   }
+//   &:after {
+//     position: absolute;
+//     content: '';
+//     // display: block;
+//     top: -67px;
+//     left: 0;
+//     width: 100%;
+//     height: 200vh;
+//     // background-image: url(../assets/fondoBlancoMed.png);
+//     background-image: var(--background-url-medium);
+//     background-size: cover;
+//     // opacity: 0.05;
+//     opacity: 0.05;
+//     pointer-events: none;
+//     @media screen and (min-width: 768px) {
+//       background-image: var(--background-url-big);
+//       // background-size: contain;
+//     }
+//   }
+// }

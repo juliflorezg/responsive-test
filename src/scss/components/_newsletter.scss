@@ -1,0 +1,156 @@
+.newsletter {
+  background-color: #fff;
+  padding: 0 5%;
+
+  &__container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    color: grey;
+    text-align: center;
+
+    @media screen and(min-width:768px) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+  &__description {
+    margin-bottom: 30px;
+  }
+
+  &__input-field {
+    height: auto;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+
+    @media screen and(min-width:768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px 30px;
+      max-width: 100%;
+    }
+
+    input,
+    select {
+      padding: 5px 10px;
+      color: grey;
+      width: 100%;
+      background-color: lightgrey;
+      outline: grey;
+      border: none;
+    }
+
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input:focus,
+    select:focus {
+      outline: 1px solid grey;
+    }
+    a {
+      display: inline-block;
+      color: grey;
+      margin-bottom: 10px;
+
+      @media screen and(min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    select:invalid {
+      color: gray;
+    }
+  }
+
+  &__conditions {
+    button {
+      padding: 0.5rem 0.75rem;
+      margin-left: auto;
+      background-color: gold;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    input[type='checkbox'] {
+      width: auto;
+    }
+    a {
+      flex-grow: 2;
+    }
+
+    @media screen and(min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__name-error,
+  &__email-error,
+  &__identification-error,
+  &__identification-number-error,
+  &__phone-error,
+  &__conditions-error {
+    display: none;
+    color: crimson;
+  }
+
+  .show-error {
+    display: block;
+  }
+  .disabled {
+    cursor: not-allowed;
+  }
+
+  &__input-error {
+    background-color: rgb(255, 231, 234) !important;
+    outline: 1px solid crimson !important;
+    color: crimson;
+  }
+
+  &__thank-you {
+    text-align: center;
+    padding: 25px 0 0;
+    color: black;
+    font-size: 1.5rem;
+    animation: fade 0.3s ease-in-out;
+  }
+
+  &__copyright {
+    color: lightgray;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    @media screen and(min-width: 768px) {
+      padding: 2.5rem;
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

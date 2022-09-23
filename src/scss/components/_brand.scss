@@ -1,0 +1,61 @@
+.brand {
+  position: relative;
+  background-color: var(--background-color);
+  padding: 20px 5%;
+  z-index: -5;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 90px;
+  }
+
+  &__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  &__name {
+    position: relative;
+    padding: 0 2rem;
+    padding-bottom: 1rem;
+    max-width: 415px;
+    border-bottom: 2px dashed grey;
+    border-left: 1px solid grey;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 50%;
+      width: 3px;
+      background-color: lightgrey;
+    }
+
+    span {
+      display: inline-block;
+      color: grey;
+      margin-bottom: 2rem;
+    }
+
+    &-picture {
+      h1 {
+        visibility: hidden;
+      }
+      max-width: 350px;
+      height: 37px;
+      background-image: url('../assets/bgtext.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__description {
+    border-right: 2px solid grey;
+
+    p {
+      padding-block: 2rem;
+      padding-inline-start: 2rem;
+      max-width: 415px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
